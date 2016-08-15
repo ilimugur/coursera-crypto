@@ -73,12 +73,6 @@ def brute_force_ciphertext_pairs(cts):
 # Decode the message and print it, assuming that the most frequent candidate
 # value for each byte of key is its correct value.
 def print_info_found(ciphertexts, key_info):
-    key = ''
-    for i in range(len(key_info)):
-        if len(key_info[i]) > 0:
-            key_array = key_info[i]
-            if len(key_array) > 0:
-		print str(i) + ": " + str(key_array)
     msg_chars = []
     key = []
     for i in range(len(ciphertexts[-1])):
@@ -88,8 +82,6 @@ def print_info_found(ciphertexts, key_info):
         else:
             key.append(chr(0))
             msg_chars.append(ciphertexts[-1][i])
-    print ciphertexts[-1]
-    print key
     print ''.join(msg_chars)
 
 def solve(input_file):
